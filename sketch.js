@@ -44,8 +44,9 @@ function preload() {
 }
 
 function setup() {
+  createCanvas(400,600)
   
-   background1 = createSprite(200,300,10,10);
+   background1 = createSprite(200,300,400,0);
    background1.addImage(backgroundimg);
    background1.velocityX = -(6 + 3*score/100);
   
@@ -106,13 +107,13 @@ function draw() {
   
   if (player.isTouching(stonegroup) ||player.isTouching(snakegroup))      {
        player.velocity = 0;
-       gameover = createSprite(200,200,10,10);
+       gameover = createSprite(100,300,10,10);
        gameover.addImage(gameoverimg);
-       gameover.scale = 2.7;
+       gameover.scale = 1.4;
       }
   
   player.velocityY = player.velocityY + 2;
-  camera.position.x= player.x
+  // camera.position.x= player.x
  
   drawSprites();
 }
